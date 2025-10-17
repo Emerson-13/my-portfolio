@@ -240,7 +240,7 @@ const WelcomePage = () => {
               }}
             />
             <img
-              src="/picture.jpg"
+              src={`${import.meta.env.BASE_URL}picture.jpg`} 
               alt="Emerson M. Gonzales"
               className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-white/10 shadow-2xl"
             />
