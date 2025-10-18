@@ -5,11 +5,16 @@ const WelcomePage = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
+  const [expandedProject, setExpandedProject] = useState(null);
   
   const skillsRef = useRef(null);
   const experienceRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
   const isSkillsInView = useInView(skillsRef, { once: true, margin: "-50px" });
   const isExperienceInView = useInView(experienceRef, { once: true, margin: "-50px" });
+  const isAboutInView = useInView(aboutRef, { once: true, margin: "-50px" });
+  const isProjectsInView = useInView(projectsRef, { once: true, margin: "-50px" });
   
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.3]);
@@ -43,16 +48,11 @@ const WelcomePage = () => {
     { name: 'CSS/Tailwind', level: 'Advanced', icon: '🎨', color: 'from-pink-400 to-purple-400' },
     { name: 'Node.js', level: 'Advanced', icon: '🟢', color: 'from-green-400 to-emerald-400' },
     { name: 'Laravel', level: 'Advanced', icon: '🧱', color: 'from-red-400 to-orange-400' },
-    { name: 'PHP', level: 'Intermediate', icon: '🐘', color: 'from-cyan-400 to-blue-400' },
-    { name: 'FlutterFlow', level: 'Intermediate', icon: '📱', color: 'from-pink-400 to-purple-400' }, 
-    { name: 'Mysql', level: 'Advance', icon: '🐬', color: 'from-cyan-400 to-blue-400' },
-    { name: 'Arduino', level: 'Intermediate', icon: '🔌', color: 'from-yellow-400 to-orange-400' },
-    { name: 'Inertia.js', level: 'Intermediate', icon: '⚙️', color: 'from-purple-400 to-indigo-400' }, 
-    { name: 'Supabase', level: 'Intermediate', icon: '🪶', color: 'from-blue-500 to-purple-500' },
-    { name: 'MongoDB', level: 'Intermediate', icon: '🍃', color: 'from-green-400 to-emerald-400' }, 
-    { name: 'Java', level: 'Intermediate', icon: '☕', color: 'from-yellow-400 to-orange-400' },
-    { name: 'C++', level: 'Intermediate', icon: '💾', color: 'from-blue-500 to-purple-500' },   
-    { name: 'Vue.js', level: 'Intermediate', icon: '🖼️', color: 'from-teal-400 to-green-400' },    
+    { name: 'Inertia.js', level: 'Intermediate', icon: '⚙️', color: 'from-purple-400 to-indigo-400' },
+    { name: 'Vue.js', level: 'Intermediate', icon: '🖼️', color: 'from-teal-400 to-green-400' },
+    { name: 'FlutterFlow', level: 'Intermediate', icon: '📱', color: 'from-blue-400 to-indigo-400' },
+    { name: 'C++', level: 'Intermediate', icon: '💾', color: 'from-blue-500 to-purple-500' },
+    { name: 'Arduino', level: 'Intermediate', icon: '🔌', color: 'from-cyan-400 to-blue-400' },
   ];
 
   const experiences = [
@@ -61,17 +61,66 @@ const WelcomePage = () => {
       company: 'Tech Company',
       duration: '2025',
       description: 'Building responsive web applications and designing scalable component libraries using modern state management.',
-      tags: ['Laravel', 'React', 'Node.js', 'Mysql', 'Inertia.js', 'Tailwind CSS', 'PHP']
+      tags: ['React', 'Node.js', 'MongoDB']
     },
     {
       title: 'Web Developer',
       company: 'Freelance',
       duration: '2023 - 2025',
       description: 'Developed user interfaces and features for an e-commerce platform, focusing on performance optimization.',
-      tags: ['React', 'Javascript', 'Node.js', 'MySQL']
+      tags: ['Laravel', 'Vue.js', 'MySQL']
     },
   ];
 
+  // =======================================================
+  // FIX: Define the 'projects' array here
+  // =======================================================
+    const projects = [
+        {
+        id: 1,
+        title: 'POS Inventory System',
+        image: `${import.meta.env.BASE_URL}POS.jpg`,
+        description: 'A Point of Sale and Inventory Management System for tracking products, sales, and stock levels in real time.',
+        fullDescription:
+        'This system allows store owners to efficiently manage products, sales transactions, and stock updates. It includes barcode scanning, sales analytics, and automated low-stock alerts. Built with React, Node.js, and MySQL for smooth performance and scalability.',
+        tags: ['React', 'Laravel', 'Inertia.js', 'MySQL', 'Tailwind CSS'],
+        github: 'https://github.com/Emerson-13/Heros',
+        demo: ''
+    },
+    {
+        id: 2,
+        title: 'Barangay Concern Management System',
+        image: `${import.meta.env.BASE_URL}BaranggaySystem.jpg`,
+        description: 'A web-based system for logging, tracking, and resolving barangay complaints and requests with geo-tagging features.',
+        fullDescription:
+        'This system helps barangay officials manage resident concerns digitally. It includes resident registration, complaint tracking, map-based location tagging, and report generation. Built using Laravel, React, and MySQL with Inertia.js integration.',
+        tags: ['Laravel', 'React', 'Inertia.js', 'MySQL', 'GeoTagging', 'Tailwind CSS'],
+        github: 'https://github.com/Emerson-13/Barangay-System',
+        demo: ''
+    },
+    {
+        id: 3,
+        title: 'Water Quality Monitoring System',
+        image: `${import.meta.env.BASE_URL}WaterQuality.jpg`,
+        description: 'An IoT-based system to monitor water parameters like pH, temperature, and turbidity in real-time.',
+        fullDescription:
+        'This project integrates sensors with ESP32 to collect and send data to a web dashboard for visualization. It helps in maintaining safe water conditions for aquaculture and environmental monitoring. Built with Arduino (ESP32), Node.js, and Flutter for the mobile interface.',
+        tags: ['Arduino', 'ESP32', 'Node.js', 'IoT'],
+        github: 'https://github.com/Emerson-13/Pondgen24',
+        demo: ''
+    },
+    {
+        id: 4,
+        title: 'Enrollment Management System',
+        image: `${import.meta.env.BASE_URL}Enrollment.jpg`,
+        description: 'A full-stack web system for managing student applications, grades, and attendance.',
+        fullDescription:
+        'This system automates enrollment workflows — from student registration to admin approval and grading. It features role-based access for students and admins, attendance tracking, and report generation. Developed using React, Node.js, and MySQL.',
+        tags: ['React', 'Laravel', 'Inertia.js', 'MySQL', 'Tailwind CSS'],
+        github: 'https://github.com/Emerson-13/Enrollment',
+        demo: ''
+    },
+    ];
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -296,6 +345,198 @@ const WelcomePage = () => {
                 <span className="text-[10px] sm:text-xs text-indigo-500 dark:text-indigo-300 font-medium whitespace-nowrap">
                   {skill.level}
                 </span>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* About Me Section */}
+      <section ref={aboutRef} className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={isAboutInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16 text-gray-900 dark:text-white"
+        >
+          About <span className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">Me</span>
+        </motion.h2>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isAboutInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="bg-white/80 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 p-6 sm:p-10 rounded-2xl shadow-xl">
+            <div className="space-y-6 text-gray-600 dark:text-gray-300">
+              <motion.p 
+                initial={{ opacity: 0, x: -20 }}
+                animate={isAboutInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.4 }}
+                className="text-base sm:text-lg leading-relaxed"
+              >
+                Hello! I'm <span className="font-semibold text-indigo-600 dark:text-indigo-400">Emerson M. Gonzales</span>, a passionate Full Stack Developer with a keen eye for creating elegant solutions to complex problems. My journey in web development started with a curiosity about how things work on the internet, and it has evolved into a career dedicated to building impactful digital experiences.
+              </motion.p>
+
+              <motion.p 
+                initial={{ opacity: 0, x: -20 }}
+                animate={isAboutInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.6 }}
+                className="text-base sm:text-lg leading-relaxed"
+              >
+                I specialize in modern web technologies including <span className="font-semibold text-purple-600 dark:text-purple-400">React, Laravel, Node.js</span>, and various database systems. I love turning ideas into reality through clean, efficient code and creating user interfaces that are both beautiful and functional.
+              </motion.p>
+
+              <motion.p 
+                initial={{ opacity: 0, x: -20 }}
+                animate={isAboutInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.8 }}
+                className="text-base sm:text-lg leading-relaxed"
+              >
+                When I'm not coding, you'll find me exploring new technologies, working on IoT projects with Arduino, or contributing to open-source communities. I believe in continuous learning and staying updated with the latest industry trends to deliver the best solutions to my clients.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isAboutInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 1 }}
+                className="pt-4 border-t border-gray-200 dark:border-white/10"
+              >
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4">What I Bring:</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    '🎯 Clean & Maintainable Code',
+                    '⚡ Performance Optimization',
+                    '🎨 Responsive Design',
+                    '🔧 Problem-Solving Skills',
+                    '📱 Cross-Platform Development',
+                    '🤝 Team Collaboration'
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={isAboutInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ delay: 1.2 + (i * 0.1) }}
+                      className="flex items-center gap-2 text-sm sm:text-base"
+                    >
+                      <span>{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Projects Section */}
+      <section ref={projectsRef} className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={isProjectsInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16 text-gray-900 dark:text-white"
+        >
+          My <span className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">Projects</span>
+        </motion.h2>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isProjectsInView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-7xl mx-auto"
+        >
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              variants={itemVariants}
+              layoutId={`project-${project.id}`}
+              onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
+              className={`group relative cursor-pointer transition-all duration-500 ${
+                expandedProject === project.id 
+                  ? 'md:col-span-2 z-50' 
+                  : ''
+              }`}
+            >
+              <div className="bg-white/80 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300">
+                {/* Project Image */}
+                <div className="relative h-48 sm:h-64 overflow-hidden">
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                      {project.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Project Content */}
+                <div className="p-6">
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+                    {expandedProject === project.id ? project.fullDescription : project.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-3 py-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 text-indigo-600 dark:text-indigo-300 rounded-full border border-indigo-400/20"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Expanded Content */}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: expandedProject === project.id ? 'auto' : 0,
+                      opacity: expandedProject === project.id ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-4 border-t border-gray-200 dark:border-white/10 space-y-4">
+                      <div className="flex gap-3">
+                        <a
+                          href={project.github}
+                          onClick={(e) => e.stopPropagation()}
+                          className="flex-1 px-4 py-2 bg-gray-900 dark:bg-white/10 text-white dark:text-gray-200 rounded-lg text-center text-sm font-medium hover:bg-gray-800 dark:hover:bg-white/20 transition-colors"
+                        >
+                          View Code
+                        </a>
+                        <a
+                        href={project.demo || '#'}
+                        onClick={(e) => {
+                            if (!project.demo) e.preventDefault(); // block click if no link
+                            e.stopPropagation();
+                        }}
+                        className={`flex-1 px-4 py-2 rounded-lg text-center text-sm font-medium transition-all ${
+                            project.demo
+                            ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg'
+                            : 'bg-gray-400 text-gray-200 cursor-not-allowed'
+                        }`}
+                        >
+                        Live Demo
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Click Indicator */}
+                  <div className="mt-4 text-center">
+                    <span className="text-xs text-gray-400 dark:text-gray-500">
+                      {expandedProject === project.id ? 'Click to collapse ▲' : 'Click to expand ▼'}
+                    </span>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
