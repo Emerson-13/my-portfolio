@@ -76,48 +76,8 @@ const WelcomePage = () => {
   // FIX: Define the 'projects' array here
   // =======================================================
   const projects = [
-    {
+      {
       id: 1,
-      title: 'POS Inventory System',
-      image: `${import.meta.env.BASE_URL}POS.jpg`,
-      description: 'A Point of Sale and Inventory Management System for tracking products, sales, and stock levels in real time.',
-      fullDescription: 'This system allows store owners to efficiently manage products, sales transactions, and stock updates. It includes barcode scanning, sales analytics, and automated low-stock alerts. Built with React, Node.js, and MySQL for smooth performance and scalability.',
-      tags: ['React', 'Laravel', 'Inertia.js', 'MySQL', 'Tailwind CSS'],
-      github: 'https://github.com/Emerson-13/Heros',
-      demo: ''
-    },
-    {
-      id: 2,
-      title: 'Barangay Concern Management System',
-      image: `${import.meta.env.BASE_URL}BaranggaySystem.jpg`,
-      description: 'A web-based system for logging, tracking, and resolving barangay complaints and requests with geo-tagging features.',
-      fullDescription: 'This system helps barangay officials manage resident concerns digitally. It includes resident registration, complaint tracking, map-based location tagging, and report generation. Built using Laravel, React, and MySQL with Inertia.js integration.',
-      tags: ['Laravel', 'React', 'Inertia.js', 'MySQL', 'GeoTagging', 'Tailwind CSS'],
-      github: 'https://github.com/Emerson-13/Barangay-System',
-      demo: ''
-    },
-    {
-      id: 3,
-      title: 'Water Quality Monitoring System',
-      image: `${import.meta.env.BASE_URL}WaterQuality.jpg`,
-      description: 'An IoT-based system to monitor water parameters like pH, temperature, and turbidity in real-time.',
-      fullDescription: 'This project integrates sensors with ESP32 to collect and send data to a web dashboard for visualization. It helps in maintaining safe water conditions for aquaculture and environmental monitoring. Built with Arduino (ESP32), Node.js, and Flutter for the mobile interface.',
-      tags: ['Arduino', 'ESP32', 'Node.js', 'IoT'],
-      github: 'https://github.com/Emerson-13/Pondgen24',
-      demo: ''
-    },
-    {
-      id: 4,
-      title: 'Enrollment Management System',
-      image: `${import.meta.env.BASE_URL}Enrollment.jpg`,
-      description: 'A full-stack web system for managing student applications, grades, and attendance.',
-      fullDescription: 'This system automates enrollment workflows — from student registration to admin approval and grading. It features role-based access for students and admins, attendance tracking, and report generation. Developed using React, Node.js, and MySQL.',
-      tags: ['React', 'Laravel', 'Inertia.js', 'MySQL', 'Tailwind CSS'],
-      github: 'https://github.com/Emerson-13/Enrollment',
-      demo: ''
-    },
-    {
-      id: 5,
       title: 'Vyblinx – Social Media Platform',
       image: `${import.meta.env.BASE_URL}Vyblinx.png`,
       description: 'A social media platform with user interaction and content-sharing functionalities.',
@@ -127,7 +87,7 @@ const WelcomePage = () => {
       demo: ''
     },
     {
-      id: 6,
+      id: 2,
       title: 'Work4U – Online Tutoring Platform',
       image: `${import.meta.env.BASE_URL}Work4u.png`,
       description: 'An online tutoring platform connecting students and tutors with scheduling and session management.',
@@ -137,7 +97,7 @@ const WelcomePage = () => {
       demo: ''
     },
     {
-      id: 7,
+      id: 3,
       title: 'Payroll System',
       image: `${import.meta.env.BASE_URL}Payroll.png`,
       description: 'A payroll management system for processing employee salaries, records, and reports.',
@@ -147,13 +107,53 @@ const WelcomePage = () => {
       demo: ''
     },
     {
-      id: 8,
+      id: 4,
       title: 'UnyRyde – Car Rental Platform',
       image: `${import.meta.env.BASE_URL}UnyRyde.png`,
       description: 'A car rental platform for browsing vehicles, booking rentals, and managing reservations.',
       fullDescription: 'Contributed as Support Developer to UnyRyde, a platform allowing users to browse available vehicles, make bookings, and manage their rental history. Built with Laravel, Inertia.js, and Vue.js with a clean and user-friendly interface.',
       tags: ['Laravel', 'Inertia.js', 'Vue.js'],
       github: '',
+      demo: ''
+    },
+    {
+      id: 5,
+      title: 'POS Inventory System',
+      image: `${import.meta.env.BASE_URL}POS.jpg`,
+      description: 'A Point of Sale and Inventory Management System for tracking products, sales, and stock levels in real time.',
+      fullDescription: 'This system allows store owners to efficiently manage products, sales transactions, and stock updates. It includes barcode scanning, sales analytics, and automated low-stock alerts. Built with React, Node.js, and MySQL for smooth performance and scalability.',
+      tags: ['React', 'Laravel', 'Inertia.js', 'MySQL', 'Tailwind CSS'],
+      github: 'https://github.com/Emerson-13/Heros',
+      demo: ''
+    },
+    {
+      id: 6,
+      title: 'Barangay Concern Management System',
+      image: `${import.meta.env.BASE_URL}BaranggaySystem.jpg`,
+      description: 'A web-based system for logging, tracking, and resolving barangay complaints and requests with geo-tagging features.',
+      fullDescription: 'This system helps barangay officials manage resident concerns digitally. It includes resident registration, complaint tracking, map-based location tagging, and report generation. Built using Laravel, React, and MySQL with Inertia.js integration.',
+      tags: ['Laravel', 'React', 'Inertia.js', 'MySQL', 'GeoTagging', 'Tailwind CSS'],
+      github: 'https://github.com/Emerson-13/Barangay-System',
+      demo: ''
+    },
+    {
+      id: 7,
+      title: 'Water Quality Monitoring System',
+      image: `${import.meta.env.BASE_URL}WaterQuality.jpg`,
+      description: 'An IoT-based system to monitor water parameters like pH, temperature, and turbidity in real-time.',
+      fullDescription: 'This project integrates sensors with ESP32 to collect and send data to a web dashboard for visualization. It helps in maintaining safe water conditions for aquaculture and environmental monitoring. Built with Arduino (ESP32), Node.js, and Flutter for the mobile interface.',
+      tags: ['Arduino', 'ESP32', 'Node.js', 'IoT'],
+      github: 'https://github.com/Emerson-13/Pondgen24',
+      demo: ''
+    },
+    {
+      id: 8,
+      title: 'Enrollment Management System',
+      image: `${import.meta.env.BASE_URL}Enrollment.jpg`,
+      description: 'A full-stack web system for managing student applications, grades, and attendance.',
+      fullDescription: 'This system automates enrollment workflows — from student registration to admin approval and grading. It features role-based access for students and admins, attendance tracking, and report generation. Developed using React, Node.js, and MySQL.',
+      tags: ['React', 'Laravel', 'Inertia.js', 'MySQL', 'Tailwind CSS'],
+      github: 'https://github.com/Emerson-13/Enrollment',
       demo: ''
     },
   ];
