@@ -155,7 +155,7 @@ const WelcomePage = () => {
       tags: ['React', 'Laravel', 'Inertia.js', 'MySQL', 'Tailwind CSS'],
       github: 'https://github.com/Emerson-13/Enrollment',
       demo: ''
-    },
+    }, 
   ];
 
   const containerVariants = {
