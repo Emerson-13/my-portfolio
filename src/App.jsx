@@ -7,7 +7,7 @@ import DarkThemeLayout from './Layout/DarkThemeLayout';
 function App() {
   return (
     <ThemeProvider>
-      <Router basename="/my-portfolio/">
+      <Router>
         <DarkThemeLayout>
           <Routes>
             <Route path="/" element={<WelcomePage />} />
