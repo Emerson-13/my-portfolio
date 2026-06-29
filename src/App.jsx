@@ -7,7 +7,7 @@ import DarkThemeLayout from './Layout/DarkThemeLayout';
 function App() {
   return (
     <ThemeProvider>
-      <Router basename="/my-portfolio/">
+      <Router basename={import.meta.env.BASE_URL}>
         <DarkThemeLayout>
           <Routes>
             <Route path="/" element={<WelcomePage />} />
