@@ -211,7 +211,7 @@ const WelcomePage = () => {
             const isActive = !isOverview && activeSection === link.id;
             return (
               <button
-                key={link.id}
+                key={link.id} 
                 type="button"
                 onClick={() => handleNavClick(link.id)}
                 className={`shrink-0 px-3 py-1 rounded-full text-xs font-medium transition-colors ${
@@ -228,7 +228,7 @@ const WelcomePage = () => {
       </header>
 
       {/* Spacer so fixed header doesn't overlap the hero section */}
-      <div className="h-16 sm:h-16" />
+      <div className="h-2 sm:h-2" />
 
       {isOverview ? (
         <div className="pt-8">
