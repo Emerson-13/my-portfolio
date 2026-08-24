@@ -4,6 +4,26 @@ const projectImage = (folder, file) => `${base}projects/${folder}/${file}`;
 const projects = [
   {
     id: 1,
+    title: "HR Lifecycle AI",
+    images: [],
+    description:
+      "An AI-powered HR lifecycle system that automates the hiring process from job description creation to candidate lifecycle management using AI agents.",
+    fullDescription:
+      "HR Lifecycle AI is an intelligent recruitment and HR automation platform that starts with AI-generated job descriptions and carries candidates through the entire hiring lifecycle. It uses n8n to orchestrate workflows that connect AI agents to each stage of the process — job posting, candidate screening, interview scheduling, evaluation, and onboarding — reducing manual HR workload and speeding up hiring decisions.",
+    tags: ["n8n", "AI Agents", "Laravel", "Vue.js", "Supabase"],
+    github: "",
+    demo: "",
+    features: [
+      "AI-Generated Job Descriptions",
+      "Automated Candidate Screening",
+      "n8n Workflow Orchestration",
+      "AI Agent Integration",
+      "Interview Scheduling",
+      "Candidate Lifecycle Tracking",
+    ],
+  },
+  {
+    id: 2,
     title: "HRIS - Payrolll",
     images: [],
     description:
@@ -23,7 +43,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Lending System",
     images: [],
     description:
@@ -43,7 +63,7 @@ const projects = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Bayad Mo",
     images: [],
     description:
@@ -63,7 +83,7 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Vyblinx - Social Media Platform",
     images: [projectImage("vyblinx", "1.png")],
     description:
@@ -83,7 +103,7 @@ const projects = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Work4U - Online Tutoring Platform",
     images: [projectImage("work4u", "1.png")],
     description:
@@ -102,7 +122,7 @@ const projects = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Payroll System",
     images: [projectImage("payroll", "1.png")],
     description:
@@ -121,7 +141,7 @@ const projects = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "UnyRyde - Car Rental Platform",
     images: [projectImage("unyryde", "1.png")],
     description:
@@ -140,7 +160,7 @@ const projects = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "POS Inventory System",
     images: [],
     description:
@@ -159,7 +179,7 @@ const projects = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     title: "Barangay Concern Management System",
     images: [projectImage("barangay", "1.jpg")],
     description:
@@ -178,7 +198,7 @@ const projects = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     title: "Water Quality Monitoring System",
     images: [],
     description:
@@ -197,7 +217,7 @@ const projects = [
     ],
   },
   {
-    id: 11,
+    id: 12,
     title: "Enrollment Management System",
     images: [],
     description:
@@ -217,4 +237,4 @@ const projects = [
   },
 ];
 
-export default projects;
+export default projects; 

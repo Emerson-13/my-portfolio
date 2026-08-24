@@ -8,6 +8,12 @@ const skills = [
   { name: 'Node.js', level: 'Intermediate', icon: '🟢', color: 'from-green-400 to-emerald-400' },
   { name: 'FlutterFlow', level: 'Intermediate', icon: '📱', color: 'from-blue-400 to-indigo-400' },
   { name: 'Arduino', level: 'Intermediate', icon: '🔌', color: 'from-cyan-400 to-blue-400' },
+  { name: 'n8n Automation', level: 'Intermediate', icon: '🔗', color: 'from-orange-400 to-red-400' },
+  { name: 'Supabase', level: 'Intermediate', icon: '⚡', color: 'from-emerald-400 to-teal-400' },
+  { name: 'DevOps', level: 'Intermediate', icon: '🚀', color: 'from-slate-400 to-gray-500' },
+  { name: 'React Native', level: 'Intermediate', icon: '📲', color: 'from-cyan-400 to-sky-400' },
+  { name: 'Laravel Reverb', level: 'Intermediate', icon: '📡', color: 'from-red-400 to-pink-400' },
+  { name: 'Redis', level: 'Intermediate', icon: '🧠', color: 'from-red-500 to-rose-500' },
 ];
 
 export default skills;
