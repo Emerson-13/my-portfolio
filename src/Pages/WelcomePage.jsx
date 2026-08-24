@@ -145,17 +145,18 @@ const WelcomePage = () => {
         <div className="relative flex items-center justify-between h-16 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
 
           {/* Logo — anchored left, acts as a "back to top" link */}
+                    {/* Logo — anchored left, acts as a "back to top" link */}
           <button
             type="button"
             onClick={handleLogoClick}
-            className="flex items-center gap-2 shrink-0 group"
+            className="flex items-center gap-2 shrink-0 group min-w-0"
             aria-label="Go to top"
           >
-            <span className="flex items-center justify-center w-9 h-9 rounded-full bg-indigo-600 text-white text-sm font-bold shadow-md group-hover:bg-indigo-700 transition-colors">
+            <span className="flex items-center justify-center w-9 h-9 rounded-full bg-indigo-600 text-white text-sm font-bold shadow-md shrink-0 group-hover:bg-indigo-700 transition-colors">
               E
             </span>
-            <span className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
-              Emerson
+            <span className="text-base sm:text-lg font-semibold tracking-tight text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors truncate max-w-[9rem] sm:max-w-none">
+              Emerson M. Gonzales
             </span>
           </button>
 
