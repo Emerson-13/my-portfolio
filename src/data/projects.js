@@ -4,12 +4,12 @@ const projectImage = (folder, file) => `${base}projects/${folder}/${file}`;
 const projects = [
   {
     id: 1,
-    title: "My HRIS",
+    title: "HRIS - Payrolll",
     images: [],
     description:
       "A complete Human Resource Information System for managing employees, payroll, attendance, leave, recruitment, and performance.",
     fullDescription:
-      "My HRIS is a business-grade HR management platform designed to centralize employee records, automate payroll, manage attendance, handle leave requests, monitor recruitment, and support performance management.",
+      "HRIS is a business-grade HR management platform designed to centralize employee records, automate payroll, manage attendance, handle leave requests, monitor recruitment, and support performance management.",
     tags: ["Laravel", "Inertia.js", "Vue.js", "Tailwind CSS", "MySQL"],
     github: "",
     demo: "",
