@@ -9,7 +9,8 @@ export default function OverviewGrid({ skills, experiences, projects, onViewFull
 
   return (
     <div className="w-full">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+       <div className="h-16 sm:h-16" />
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
