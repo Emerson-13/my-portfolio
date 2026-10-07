@@ -326,7 +326,7 @@ const AboutSection = () => {
                 {/* Story Controls Footer */}
                 <div className="pt-6 mt-6 border-t border-gray-100 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
                   {/* Chapter Select Quick Buttons */}
-                  <div className="flex items-center gap-1.5 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
+                  <div className="flex items-center gap-1.5 w-full sm:w-auto overflow-x-auto pb-2 sleek-scrollbar">
                     {STORY_CHAPTERS.map((ch, idx) => (
                       <button
                         key={ch.id}
