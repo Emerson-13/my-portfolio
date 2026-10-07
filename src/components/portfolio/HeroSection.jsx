@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const CODE_SNIPPET = `<?php
 
@@ -34,6 +34,11 @@ const TERMINAL_LOGS = [
   { time: "09:41:06", tag: "READY", text: "Available for high-impact missions." },
 ];
 
+const GLIDE_TRANSITION = {
+  duration: 1.25,
+  ease: [0.22, 1, 0.36, 1],
+};
+
 const HeroSection = ({
   isMobile,
   isExpanded,
@@ -45,10 +50,12 @@ const HeroSection = ({
 
   return (
     <motion.section
+      layout
+      transition={{ layout: GLIDE_TRANSITION }}
       style={!isMobile ? { opacity, scale } : {}}
       className={`relative container mx-auto px-4 sm:px-6 ${
         isMobile ? "pt-28 pb-16" : "py-16 sm:py-24 md:py-32"
-      } flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-14 transition-all duration-500 ${
+      } flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-14 ${
         isExpanded ? "lg:flex-row-reverse" : ""
       }`}
     >
@@ -59,20 +66,19 @@ const HeroSection = ({
 
       {/* LEFT COLUMN: Developer Pitch & Command Actions */}
       <motion.div
+        layout
+        transition={{ layout: GLIDE_TRANSITION }}
         className="flex-1 space-y-7 text-center lg:text-left z-10 w-full"
         initial={{ opacity: 0, x: isMobile ? 0 : -35 }}
         animate={{
-          opacity: isExpanded ? 0.85 : 1,
-          x: 0,
-          scale: isExpanded ? 0.95 : 1,
+          opacity: isExpanded ? 0.9 : 1,
+          scale: isExpanded ? 0.96 : 1,
         }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         {/* Terminal prompt pill */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.5 }}
+          layout
+          transition={{ layout: GLIDE_TRANSITION }}
           className="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-4 py-2 text-xs sm:text-sm font-mono font-medium text-indigo-600 dark:text-indigo-300"
         >
           <span className="flex h-2 w-2 relative">
@@ -83,11 +89,10 @@ const HeroSection = ({
           <span>const dev = &quot;Emerson M. Gonzales&quot;; &bull; Full-Stack Architect</span>
         </motion.div>
 
-        {/* Clean, Strong Title (No overlapping text, no broken underline) */}
+        {/* Clean, Strong Title */}
         <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.18, duration: 0.55 }}
+          layout
+          transition={{ layout: GLIDE_TRANSITION }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white"
         >
           Building software that helps businesses{" "}
@@ -98,9 +103,8 @@ const HeroSection = ({
 
         {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.26, duration: 0.55 }}
+          layout
+          transition={{ layout: GLIDE_TRANSITION }}
           className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
         >
           I design and develop business engines such as HRIS, lending platforms,
@@ -110,9 +114,8 @@ const HeroSection = ({
 
         {/* Developer Metrics HUD Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.34, duration: 0.55 }}
+          layout
+          transition={{ layout: GLIDE_TRANSITION }}
           className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto lg:mx-0"
         >
           {[
@@ -141,9 +144,8 @@ const HeroSection = ({
 
         {/* Action Buttons with CV Download */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.42, duration: 0.55 }}
+          layout
+          transition={{ layout: GLIDE_TRANSITION }}
           className="flex flex-wrap gap-3 justify-center lg:justify-start pt-2"
         >
           <a
@@ -178,17 +180,18 @@ const HeroSection = ({
         </motion.div>
       </motion.div>
 
-      {/* RIGHT COLUMN: Interactive Programmer IDE with Expandable Image */}
+      {/* RIGHT COLUMN: Interactive Programmer IDE with Slow Glide to other side */}
       <motion.div
-        className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center lg:justify-end z-20"
-        initial={{ opacity: 0, scale: 0.94 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        layout
+        transition={{ layout: GLIDE_TRANSITION }}
+        className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center z-20"
       >
-        <div
+        <motion.div
+          layout
+          transition={{ layout: GLIDE_TRANSITION }}
           className={`w-full ${
             isExpanded ? "max-w-xl" : "max-w-lg"
-          } rounded-3xl bg-[#0B0F19] text-gray-100 border border-gray-800 shadow-2xl shadow-indigo-900/30 overflow-hidden relative transition-all duration-500`}
+          } rounded-3xl bg-[#0B0F19] text-gray-100 border border-gray-800 shadow-2xl shadow-indigo-900/30 overflow-hidden relative`}
         >
           {/* Top IDE macOS Title Bar & Tabs */}
           <div className="flex items-center justify-between px-4 py-3 bg-[#131929] border-b border-gray-800/80">
@@ -242,10 +245,12 @@ const HeroSection = ({
             </div>
           </div>
 
-          {/* TAB 1: Profile Mode with Floating Badges AND Click-to-Expand Image */}
+          {/* TAB 1: Profile Mode with Floating Badges & Gliding/Expandable Image */}
           {activeTab === "profile" && (
-            <div
-              className={`p-6 sm:p-8 flex flex-col items-center justify-center relative transition-all duration-500 ${
+            <motion.div
+              layout
+              transition={{ layout: GLIDE_TRANSITION }}
+              className={`p-6 sm:p-8 flex flex-col items-center justify-center relative ${
                 isExpanded ? "min-h-[480px]" : "min-h-[420px]"
               }`}
             >
@@ -271,11 +276,13 @@ const HeroSection = ({
               </motion.div>
 
               {/* Developer Portrait with Glowing Hologram Ring & Click-To-Enlarge */}
-              <div
+              <motion.div
+                layout
+                transition={{ layout: GLIDE_TRANSITION }}
                 onClick={() => setIsExpanded(!isExpanded)}
-                className={`relative cursor-pointer group my-6 transition-all duration-500 ease-in-out ${
+                className={`relative cursor-pointer group my-6 ${
                   isExpanded
-                    ? "w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 scale-105"
+                    ? "w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80"
                     : "w-48 h-48 sm:w-56 sm:h-56"
                 }`}
                 title={isExpanded ? "Click to minimize image" : "Click to enlarge image"}
@@ -297,7 +304,7 @@ const HeroSection = ({
                     {isExpanded ? "Click to minimize ✕" : "Click to enlarge 🔍"}
                   </span>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Floating Stack Badge at Bottom */}
               <motion.div
@@ -314,7 +321,7 @@ const HeroSection = ({
                 <span className="text-gray-600">&bull;</span>
                 <span>MySQL</span>
               </motion.div>
-            </div>
+            </motion.div>
           )}
 
           {/* TAB 2: Live Code IDE (Engineer.php) */}
@@ -412,7 +419,7 @@ const HeroSection = ({
               <span>100% Validated</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </motion.section>
   );
