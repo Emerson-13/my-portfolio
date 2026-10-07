@@ -34,6 +34,7 @@ const NAV_LINKS = [
   { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
 ];
 
 const WelcomePage = () => {

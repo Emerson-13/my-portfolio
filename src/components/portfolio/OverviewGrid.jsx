@@ -100,6 +100,27 @@ export default function OverviewGrid({ skills, experiences, projects, onViewFull
                   </div>
                 ))}
               </div>
+
+              <div className="flex items-center gap-3 mt-6">
+                <a
+                  href={`${import.meta.env.BASE_URL}cv.pdf`}
+                  download="Emerson_Gonzales_CV.pdf"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-indigo-600 text-white text-xs font-medium hover:bg-indigo-700 transition-colors shadow-sm"
+                >
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  <span>Download CV</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={() => onViewFull?.("contact")}
+                  className="inline-flex items-center gap-1 px-3 py-2 rounded-lg border border-gray-300 dark:border-white/15 text-gray-700 dark:text-white/70 text-xs font-medium hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
+                >
+                  Contact &rarr;
+                </button>
+              </div>
             </div>
 
             {/* INTRO CARD — top-right */}

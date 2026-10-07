@@ -10,7 +10,9 @@ const HeroSection = ({
   return (
     <motion.section
       style={!isMobile ? { opacity, scale } : {}}
-      className={`relative container mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 transition-all duration-500 ${
+      className={`relative container mx-auto px-4 sm:px-6 ${
+        isMobile ? "pt-28 pb-16" : "py-16 sm:py-24 md:py-32"
+      } flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 transition-all duration-500 ${
         isExpanded ? "lg:flex-row-reverse" : ""
       }`}
     >
@@ -86,18 +88,34 @@ const HeroSection = ({
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.42, duration: 0.55 }}
-          className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2"
+          className="flex flex-wrap gap-3 justify-center lg:justify-start pt-2"
         >
           <a
             href="#projects"
-            className="px-7 py-3 bg-indigo-600 text-white rounded-lg font-medium shadow-sm hover:bg-indigo-700 transition-colors duration-200"
+            className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium shadow-sm hover:bg-indigo-700 transition-colors duration-200"
           >
             View Solutions
           </a>
 
           <a
-            href="https://www.messenger.com/t/5902160736571962"
-            className="px-7 py-3 bg-transparent border border-indigo-300 dark:border-indigo-500/40 text-indigo-600 dark:text-indigo-300 rounded-lg font-medium hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors duration-200"
+            href={`${import.meta.env.BASE_URL}cv.pdf`}
+            download="Emerson_Gonzales_CV.pdf"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-white/10 border border-indigo-200 dark:border-white/15 text-indigo-600 dark:text-indigo-300 rounded-lg font-medium hover:bg-indigo-50 dark:hover:bg-white/15 transition-all shadow-sm group"
+          >
+            <svg
+              className="w-4 h-4 text-indigo-500 group-hover:translate-y-0.5 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span>Download CV</span>
+          </a>
+
+          <a
+            href="#contact"
+            className="px-6 py-3 bg-transparent border border-gray-300 dark:border-white/15 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-white/5 transition-colors duration-200"
           >
             Get in Touch
           </a>
