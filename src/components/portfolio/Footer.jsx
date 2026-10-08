@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const cvPath = `${import.meta.env.BASE_URL}cv.pdf`;
+const cvPath = `${import.meta.env.BASE_URL}Emerson_Gonzales_Resume_2026.pdf`;
 const EMAIL = "gonzalesemerson079@gmail.com";
 const MESSENGER_URL = "https://www.messenger.com/t/5902160736571962";
 const GITHUB_URL = "https://github.com/Emerson-13";
@@ -222,7 +222,7 @@ const Footer = () => {
                   {/* Primary Download Button */}
                   <a
                     href={cvPath}
-                    download="Emerson_Gonzales_CV.pdf"
+                    download="Emerson_Gonzales_Resume_2026.pdf"
                     onClick={handleDownloadClick}
                     className="w-full flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-semibold text-sm shadow-lg shadow-indigo-900/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
                   >
@@ -272,7 +272,7 @@ const Footer = () => {
           <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
             <a
               href={cvPath}
-              download="Emerson_Gonzales_CV.pdf"
+              download="Emerson_Gonzales_Resume_2026.pdf"
               className="hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors"
             >
               Download CV

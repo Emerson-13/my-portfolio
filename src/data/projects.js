@@ -5,7 +5,7 @@ const projects = [
   {
     id: 1,
     title: "HR Lifecycle AI",
-    images: [],
+    images: [projectImage("keygo", "1.png")],
     description:
       "An AI-powered HR lifecycle system that automates the hiring process from job description creation to candidate lifecycle management using AI agents.",
     fullDescription:
@@ -25,7 +25,7 @@ const projects = [
   {
     id: 2,
     title: "HRIS - Payrolll",
-    images: [],
+    images: [projectImage("keygo", "2.png")],
     description:
       "A complete Human Resource Information System for managing employees, payroll, attendance, leave, recruitment, and performance.",
     fullDescription:

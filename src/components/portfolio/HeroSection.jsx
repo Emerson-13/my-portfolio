@@ -156,8 +156,8 @@ const HeroSection = ({
           </a>
 
           <a
-            href={`${import.meta.env.BASE_URL}cv.pdf`}
-            download="Emerson_Gonzales_CV.pdf"
+            href={`${import.meta.env.BASE_URL}Emerson_Gonzales_Resume_2026.pdf`}
+            download="Emerson_Gonzales_Resume_2026.pdf"
             className="inline-flex items-center gap-2 px-6 py-3.5 bg-white dark:bg-white/10 border border-indigo-200 dark:border-white/15 text-indigo-600 dark:text-indigo-300 rounded-xl font-medium hover:bg-indigo-50 dark:hover:bg-white/15 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-sm group"
           >
             <svg
