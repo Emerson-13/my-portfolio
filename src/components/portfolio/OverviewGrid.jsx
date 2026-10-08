@@ -103,8 +103,8 @@ export default function OverviewGrid({ skills, experiences, projects, onViewFull
 
               <div className="flex items-center gap-3 mt-6">
                 <a
-                  href={`${import.meta.env.BASE_URL}cv.pdf`}
-                  download="Emerson_Gonzales_CV.pdf"
+                  href={`${import.meta.env.BASE_URL}Emerson_Gonzales_Resume_2026.pdf`}
+                  download="Emerson_Gonzales_Resume_2026.pdf"
                   className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-indigo-600 text-white text-xs font-medium hover:bg-indigo-700 transition-colors shadow-sm"
                 >
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
