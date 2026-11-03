@@ -55,7 +55,7 @@ const HeroSection = ({
       style={!isMobile ? { opacity, scale } : {}}
       className={`relative container mx-auto px-4 sm:px-6 ${
         isMobile ? "pt-28 pb-16" : "py-16 sm:py-24 md:py-32"
-      } flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-14 ${
+      } flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-14 ${
         isExpanded ? "lg:flex-row-reverse" : ""
       }`}
     >
@@ -184,7 +184,7 @@ const HeroSection = ({
       <motion.div
         layout
         transition={{ layout: GLIDE_TRANSITION }}
-        className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center z-20"
+        className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center z-20 lg:pt-20"
       >
         <motion.div
           layout
