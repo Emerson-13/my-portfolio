@@ -7,15 +7,15 @@ const STORY_CHAPTERS = [
     chapter: "CHAPTER 01",
     title: "The Origin",
     mood: "👋 Greeting",
-    tagline: "Building software that runs operations, not just landing pages.",
+    tagline: "Building software that connects product, operations, and automation.",
     speech:
-      "Hello! I'm Emerson M. Gonzales. While many developers focus strictly on static UI design, my obsession is what happens behind the curtains: the approval flows, database integrity, and automated business engines that companies rely on every day to operate smoothly.",
-    highlight: "Business Systems Engineer & Full-Stack Architect",
-    stats: { label1: "Focus", val1: "Operations", label2: "Experience", val2: "3+ Years" },
+      "Hello! I'm Emerson M. Gonzales, a Full-Stack Software Developer with 3 years of experience designing and delivering web applications, multi-tenant SaaS platforms, and business systems.",
+    highlight: "Full-Stack Software Developer",
+    stats: { label1: "Focus", val1: "SaaS & Automation", label2: "Experience", val2: "3+ Years" },
     keyPoints: [
-      "Designs end-to-end systems from database schemas to responsive UI",
-      "Passionate about turning manual paperwork into clean automated dashboards",
-      "Specializes in workflows where every click, role, and approval matters",
+      "Builds end-to-end solutions from database design to responsive UI",
+      "Connects Laravel APIs, frontend applications, and AI automation workflows",
+      "Works across product requirements, testing, deployment, and maintenance",
     ],
   },
   {
@@ -23,11 +23,11 @@ const STORY_CHAPTERS = [
     chapter: "CHAPTER 02",
     title: "The Arsenal",
     mood: "⚡ Tech Stack",
-    tagline: "A battle-tested stack built for speed, stability, and scale.",
+    tagline: "A practical stack for shipping reliable products from idea to production.",
     speech:
-      "To build systems that never crash under heavy operations, I combine Laravel on the backend with Vue, Inertia.js, and React on the frontend. Paired with Tailwind CSS for rapid styling and MySQL for rock-solid relational data, this stack allows me to ship full-featured platforms at record speed.",
-    highlight: "Laravel • Vue.js • Inertia.js • React • Tailwind • MySQL",
-    stats: { label1: "Architecture", val1: "Clean & Modular", label2: "Database", val2: "Relational (MySQL)" },
+      "I combine Laravel and PHP backends with Vue.js, React, Inertia.js, REST APIs, and relational or document databases. I also use n8n, AI APIs, Playwright, Git, AWS, and VPS hosting to support automation, testing, and deployment.",
+    highlight: "Laravel / Vue.js / React / APIs / AI Automation",
+    stats: { label1: "Architecture", val1: "End-to-End", label2: "Delivery", val2: "Production Ready" },
     keyPoints: [
       "Inertia.js Single-Page Applications without complex API overhead",
       "Scalable schema design with indexing, foreign keys, and audit logs",
@@ -39,15 +39,15 @@ const STORY_CHAPTERS = [
     chapter: "CHAPTER 03",
     title: "Missions & Systems",
     mood: "🛠️ What I Build",
-    tagline: "HRIS, Lending, QR Payments, Invoicing, and Custom ERPs.",
+    tagline: "SaaS marketplaces, AI-enabled HR systems, and enterprise operations.",
     speech:
-      "My mission is solving daily operational bottlenecks. I've engineered comprehensive HRIS & Payroll suites, microfinance lending platforms, our proprietary Bayad Mo QR payment system, n8n AI agent recruitment pipelines, and custom administrative management dashboards.",
-    highlight: "Over 10+ Production Systems & 40+ Business Modules Built",
-    stats: { label1: "Systems Built", val1: "10+ Platforms", label2: "Modules", val2: "40+ Created" },
+      "My work spans service marketplaces, AI-assisted recruitment and HR workflows, social platforms, tutoring, car rental, payroll, inventory, and procurement systems. I focus on turning business requirements into maintainable software that teams can use every day.",
+    highlight: "SaaS Platforms & AI-Assisted Business Systems",
+    stats: { label1: "Project Focus", val1: "Business Software", label2: "Delivery", val2: "End to End" },
     keyPoints: [
-      "Multi-level approvals, hierarchical roles, and granular permissions",
-      "Automated financial payroll, loan computations, and invoice generators",
-      "QR code settlement flows with real-time payment reconciliation",
+      "Service discovery, booking, and marketplace workflows",
+      "Recruitment automation with AI-assisted screening and evaluation",
+      "Enterprise HR, payroll, inventory, and procurement operations",
     ],
   },
   {
@@ -376,22 +376,22 @@ const AboutSection = () => {
                   <span className="font-semibold text-indigo-600 dark:text-indigo-400">
                     Emerson M. Gonzales
                   </span>
-                  , a business software engineer focused on building practical
-                  systems for companies that want to automate operations, reduce
-                  repetitive work, and manage data more efficiently.
+                  , a Full-Stack Software Developer with 3 years of experience
+                  building web applications, multi-tenant SaaS platforms, and
+                  AI-assisted business systems.
                 </p>
 
                 <p>
-                  I specialize in Laravel, Vue, Inertia.js, React, Tailwind CSS,
-                  and MySQL. My work is centered on business platforms such as HRIS,
-                  payroll, lending, invoicing, QR payments (Bayad Mo), inventory,
-                  booking, and custom management dashboards.
+                  I specialize in Laravel, PHP, Vue.js, React, Inertia.js, REST APIs,
+                  MySQL, n8n, AI APIs, Playwright, and production deployment. My
+                  work spans SaaS marketplaces, HR automation, social platforms,
+                  tutoring, rental, payroll, inventory, and procurement systems.
                 </p>
 
                 <p>
-                  Instead of simply building static pages, I focus on flows: approvals,
-                  reports, roles, records, notifications, dashboards, and the
-                  vital business rules that make software valuable in real day-to-day operations.
+                  I work across the full delivery cycle: requirements, UI development,
+                  backend implementation, database design, testing, deployment,
+                  production support, and maintenance.
                 </p>
               </div>
 
@@ -401,14 +401,14 @@ const AboutSection = () => {
                 </h3>
                 <div className="space-y-2.5">
                   {[
+                    "Multi-Tenant SaaS Platforms",
+                    "AI-Assisted HR Workflows",
+                    "Service Booking Marketplaces",
                     "HRIS & Payroll Systems",
-                    "ERP & Inventory Tools",
-                    "QR Payment Platforms (Bayad Mo)",
-                    "Invoice Management",
-                    "Lending Management Systems",
-                    "Booking & Rental Systems",
-                    "Custom Dashboards & Analytics",
-                    "Business Audit & Reports",
+                    "Social & Tutoring Platforms",
+                    "Rental & Reservation Systems",
+                    "Inventory & Procurement Tools",
+                    "APIs, Testing & Deployment",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-2.5 text-sm text-gray-700 dark:text-gray-300">
                       <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 shrink-0" />

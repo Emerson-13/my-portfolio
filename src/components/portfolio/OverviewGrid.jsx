@@ -49,7 +49,7 @@ export default function OverviewGrid({ skills, experiences, projects, onViewFull
                 Emerson
               </h1>
               <p className="text-xs text-gray-500 dark:text-white/50">
-                Full-Stack Engineer &middot; Business Systems
+                Full-Stack Software Developer &middot; SaaS & AI Automation
               </p>
             </div>
 
@@ -57,7 +57,7 @@ export default function OverviewGrid({ skills, experiences, projects, onViewFull
             <div style={{ gridArea: "bullets" }} className="flex flex-col justify-end gap-2.5 pb-1">
               {[
                 "Laravel + Vue / Inertia / React",
-                "HRIS, payroll & operations systems",
+                "SaaS platforms, AI workflows & enterprise systems",
                 `${projects.length}+ systems shipped`,
               ].map((line) => (
                 <div key={line} className="flex items-start gap-2.5">

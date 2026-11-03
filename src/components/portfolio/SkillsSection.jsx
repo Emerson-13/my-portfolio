@@ -2,18 +2,18 @@ import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const getCategory = (name) => {
-  if (["Laravel", "MySQL", "Node.js", "Supabase", "Laravel Reverb", "Redis"].includes(name)) {
+  if (["Laravel", "PHP & Node.js", "REST APIs", "MySQL", "MongoDB & Firebase", "Supabase", "AWS & VPS Hosting", "Git & GitHub"].includes(name)) {
     return "Backend & DB";
   }
-  if (["Vue.js", "Inertia.js", "React", "Tailwind CSS"].includes(name)) {
+  if (["Vue.js", "Inertia.js", "React", "JavaScript & TypeScript", "WordPress & CMS"].includes(name)) {
     return "Frontend & UI";
   }
-  return "Automation & Mobile";
+  return "AI, Testing & Tools";
 };
 
 const getProficiency = (skill) => {
   if (skill.level === "Advanced") return 95;
-  if (skill.name === "n8n Automation" || skill.name === "Supabase") return 88;
+  if (["n8n & AI APIs", "Supabase", "Playwright E2E"].includes(skill.name)) return 88;
   return 82;
 };
 
@@ -21,7 +21,7 @@ const CATEGORIES = [
   { id: "all", label: "All Arsenal" },
   { id: "Backend & DB", label: "Backend & DB" },
   { id: "Frontend & UI", label: "Frontend & UI" },
-  { id: "Automation & Mobile", label: "Automation & Mobile" },
+  { id: "AI, Testing & Tools", label: "AI, Testing & Tools" },
 ];
 
 export default function SkillsSection({ skills = [], isMobile }) {

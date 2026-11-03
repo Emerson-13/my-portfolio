@@ -99,8 +99,8 @@ const Footer = () => {
                 </h2>
 
                 <p className="mt-4 text-base sm:text-lg text-white/80 max-w-xl leading-relaxed">
-                  Looking for custom ERP, HRIS, payroll, QR payments, or automated
-                  dashboards? Send a message or grab my CV to review my background and skills.
+                  Looking for a developer for a SaaS product, AI workflow, or
+                  business system? Send a message or grab my CV to review my background and skills.
                 </p>
               </div>
 
@@ -265,7 +265,7 @@ const Footer = () => {
               © {new Date().getFullYear()} Emerson M. Gonzales. All rights reserved.
             </p>
             <p className="text-gray-400 dark:text-gray-500 text-[11px] sm:text-xs mt-1">
-              Business Systems Developer &middot; Laravel &middot; React &middot; Vue &middot; MySQL
+              Full-Stack Software Developer &middot; SaaS &middot; Laravel &middot; Vue &middot; React
             </p>
           </div>
 

@@ -2,16 +2,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const getProjectStatus = (title) => {
-  if (title.includes("HRIS")) return "Active Product";
-  if (title.includes("Bayad Mo")) return "Active Product";
-  if (title.includes("Lending")) return "In Development";
+  if (title.includes("AppointBloom")) return "Featured SaaS";
+  if (title.includes("AI-Team") || title.includes("HR Lifecycle")) return "AI Workflow";
   return "Project Showcase";
 };
 
 const getProjectCategory = (title) => {
+  if (title.includes("AI-Team")) return "Developer Tools";
+  if (title.includes("HR Lifecycle")) return "HR Tech";
+  if (title.includes("AppointBloom")) return "SaaS Marketplace";
   if (title.includes("HRIS")) return "HR Tech";
-  if (title.includes("Bayad Mo")) return "FinTech";
-  if (title.includes("Lending")) return "Finance";
   if (title.includes("Vyblinx")) return "Social Platform";
   if (title.includes("Work4U")) return "Education";
   if (title.includes("Payroll")) return "Payroll";

@@ -1,19 +1,19 @@
 const experiences = [
   {
-    title: 'Full Stack Developer',
+    title: 'Mobile/Web Developer',
     company: 'Leepe Outsourcing Corporation',
     duration: '2025 - Present',
     description:
-      'Building and maintaining business systems using Laravel, Vue, Inertia, React, Tailwind, and MySQL.',
-    tags: ['Laravel', 'Vue.js', 'Inertia.js', 'MySQL'],
+      'Develop and maintain web and mobile applications, APIs, reusable components, and business workflows while contributing to architecture, testing, deployment, and production support.',
+    tags: ['Laravel', 'Vue.js', 'React', 'APIs', 'Deployment'],
   },
   {
-    title: 'Freelance Web Developer',
-    company: 'Freelance',
+    title: 'Freelance Full-Stack Developer',
+    company: 'Independent / Client Projects',
     duration: '2023 - 2025',
     description:
-      'Developed custom web systems for businesses, including dashboards, management platforms, and automation tools.',
-    tags: ['Laravel', 'React', 'Tailwind CSS', 'MySQL'],
+      'Delivered custom business applications from requirements and UI development through backend implementation, database design, deployment, and maintenance.',
+    tags: ['Laravel', 'React', 'MySQL', 'Automation'],
   },
 ];
 

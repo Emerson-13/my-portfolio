@@ -8,13 +8,13 @@ namespace App\\Engineering;
 class SoftwareArchitect extends FullStackDeveloper
 {
     public string $name = "Emerson M. Gonzales";
-    public string $role = "Business Software Engineer";
+    public string $role = "Full-Stack Software Developer";
     public int $experienceYears = 3;
     
     public array $arsenal = [
         'backend'  => ['Laravel', 'PHP', 'MySQL', 'Redis'],
         'frontend' => ['Vue.js', 'Inertia.js', 'React', 'Tailwind'],
-        'specialty'=> ['HRIS', 'Lending', 'QR Payments', 'ERP']
+        'specialty'=> ['SaaS', 'AI Automation', 'Business Systems']
     ];
 
     public function solveBusinessProblem(Operation $ops): Solution
@@ -30,7 +30,7 @@ const TERMINAL_LOGS = [
   { time: "09:41:02", tag: "INFO", text: "Initializing kernel... OK" },
   { time: "09:41:03", tag: "GIT", text: "HEAD detached at origin/main" },
   { time: "09:41:04", tag: "STACK", text: "Laravel 11 + React 19 + Inertia ready" },
-  { time: "09:41:05", tag: "STATUS", text: "10+ Enterprise systems online" },
+  { time: "09:41:05", tag: "STATUS", text: "SaaS + AI workflows online" },
   { time: "09:41:06", tag: "READY", text: "Available for high-impact missions." },
 ];
 
@@ -86,7 +86,7 @@ const HeroSection = ({
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
           <span className="text-gray-400 dark:text-gray-500">&gt;</span>
-          <span>const dev = &quot;Emerson M. Gonzales&quot;; &bull; Full-Stack Architect</span>
+          <span>const dev = &quot;Emerson M. Gonzales&quot;; &bull; Full-Stack Software Developer</span>
         </motion.div>
 
         {/* Clean, Strong Title */}
@@ -107,9 +107,9 @@ const HeroSection = ({
           transition={{ layout: GLIDE_TRANSITION }}
           className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
         >
-          I design and develop business engines such as HRIS, lending platforms,
-          QR payment solutions, invoicing systems, inventory tools, and custom
-          web applications.
+          I build end-to-end web applications, multi-tenant SaaS platforms, and
+          AI-assisted business systems across Laravel/PHP backends, Vue.js and
+          React interfaces, APIs, databases, deployment, and automation.
         </motion.p>
 
         {/* Developer Metrics HUD Grid */}
@@ -119,10 +119,10 @@ const HeroSection = ({
           className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto lg:mx-0"
         >
           {[
-            { val: "10+", label: "Systems Built", tag: "Production" },
-            { val: "3+", label: "Years Experience", tag: "Enterprise" },
-            { val: "40+", label: "Modules Created", tag: "Automated" },
-            { val: "100%", label: "Business Focused", tag: "Architecture" },
+            { val: "3+", label: "Years Experience", tag: "Full-Stack" },
+            { val: "SaaS", label: "Platform Focus", tag: "Multi-Tenant" },
+            { val: "AI", label: "Automation", tag: "Workflow Ready" },
+            { val: "E2E", label: "Delivery", tag: "From UI to Deploy" },
           ].map((item) => (
             <div
               key={item.label}
